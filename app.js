@@ -1,24 +1,6 @@
-// const heading = React.createElement(
-//   'h1',
-//   { id: 'heading' }, // attributes
-//   'Hello World! from react' // children
-// );
-// console.log(heading); // it's a js object not h1 tag or any html tag
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(heading); // render method is converting object to html tag (here h1 tag)
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-/* 
-    <div id="parent">
-      <div id="child">
-        <h1>I'm h1 tag</h1>
-        <h2>I'm h2 tag</h2>
-      </div>
-      <div id="child2">
-        <h1>I'm h1 tag</h1>
-        <h2>I'm h2 tag</h2>
-      </div>
-    </div>
-*/
 let parent = React.createElement('div', { id: 'parent' }, [
   React.createElement('div', { id: 'child' }, [
     React.createElement('h1', '', "I'm h1 tag"),
