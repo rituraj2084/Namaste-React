@@ -1,16 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
-let parent = React.createElement('div', { id: 'parent' }, [
-  React.createElement('div', { id: 'child' }, [
-    React.createElement('h1', '', "I'm h1 tag"),
-    React.createElement('h2', '', "I'm h2 tag"),
-  ]),
-  React.createElement('div', { id: 'child2' }, [
-    React.createElement('h1', '', "I'm h1 tag of child2"),
-    React.createElement('h2', '', "I'm h2 tag of child2"),
-  ]),
-]);
+// JSX (transpiled before it reaches the JS) - Parcel - Babel
+
+// JSX => Babel transpiles it to React.createElement => React.createElement - JS Object => HTMLElement(render)
+// const jsxHeading = <h1>Namaste react using JSX</h1>;
+// console.log(jsxHeading);
+const Title = () => <h2>This is title</h2>;
+const Heading = () => {
+  return (
+    <div id="container">
+      <h1>Namaste react from functional component</h1>
+      <Title />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(parent);
+root.render(<Heading />);
